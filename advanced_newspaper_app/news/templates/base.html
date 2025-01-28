@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+    <head>
+        <title>Newspaper</title>
+        <link rel="stylesheet" href="{% static 'news/css/base.css' %}">
+
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1>
+                    <a href="{% url 'home' %}">Advanced newspaper App</a>
+                </h1>
+            </div>
+        </header>
+        <div>
+            <h2>aaaaaaaaaaaaaaaaa</h2>
+            <script src="{% static 'news/js/script.js' %}"></script>
+            <img src="{% static 'news/assets/descarga.jpeg' %}" alt="">
+
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </body>
+</html>
