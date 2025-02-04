@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Posts de {{ category.name }}{% endblock %}
+{% block content %}
+    <h2>Posts de la categoría: {{ category.name }}</h2>
+    {% if posts %}
+        {% for post in posts %}
+            <div>
+                <h3><a href="{% url 'app:post_detail' post.pk %}">{{ post.title }}</a></h3>
+                <p>{{ post.summary }}</p>
+                <p>Publicado el: {{ post.published_date }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No hay posts en esta categoría.</p>
+    {% endif %}
+{% endblock %}

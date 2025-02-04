@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Lista de Posts{% endblock %}
+{% block content %}
+    <h2>Últimos Posts</h2>
+    {% for post in posts %}
+        <div>
+            <h3><a href="{% url 'app:post_detail' post.pk %}">{{ post.title }}</a></h3>
+            <p>{{ post.summary }}</p>
+            <p>Publicado el: {{ post.published_date }}</p>
+            <p>Categoría: <a href="{% url 'app:category_posts' post.category.name %}">{{ post.category.name }}</a></p>
+        </div>
+    {% endfor %}
+{% endblock %}
