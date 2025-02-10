@@ -12,6 +12,7 @@ class Article(models.Model):
     
     body = models.TextField()
     
+    #importante poner esto siempre
     def __str__(self):
         return self.title
     
