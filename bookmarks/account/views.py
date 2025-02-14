@@ -96,3 +96,17 @@ def edit(request):
             'profile_form': profile_form
         },
     )
+
+@login_required
+def imageView(request):
+    
+    return render(request,
+                  'account/images.html',
+                  {'section': 'images'})
+    
+@login_required
+def peopleView(request):
+    
+    return render(request,
+                  'account/people.html',
+                  {'section': 'people'})

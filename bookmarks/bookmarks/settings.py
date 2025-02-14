@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'account.apps.AccountConfig',
+    'account.apps.AccountConfig', #en el fichero apps.py hay un method 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
