@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'pages',
+    'bookstore_app',
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'

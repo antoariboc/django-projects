@@ -1,8 +1,23 @@
+html {
+    margin: 0px;
+}
+
 body {
     background-color: rgb(235, 190, 124);
+    margin: 0px;
+    
 }
 
 nav {
+
+    margin: 0px;
+    border: 0px;
+}
+
+.container {
     background-color: blanchedalmond;
     margin: 0px;
+    border: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
