@@ -1,4 +1,14 @@
 {% extends 'base.html' %}
-{% block content %}  
-    Esta es la book_detail 
+{% block content %}
+  <div class="col-md-4 col-lg-3 mb-2">
+    <h1>{{ template_data.author.name }}</h1>
+
+    <ul>
+      <li>Description: {{ template_data.book.description }}</li>
+      <li>Author: {{ template_data.book.author }}</li>
+    </ul>
+
+    <a class="btn btn-primary" href="{% url 'bookstore_app.book_edit' id=template_data.book.id  %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'bookstore_app.book_delete' id=template_data.book.id  %}">Delete</a>
+  </div>
 {% endblock %}
