@@ -9,14 +9,14 @@ class Author(models.Model):
     birth_date = models.DateField()
     
     def __str__(self):
-        return self.name
+        return str(self.name) if self.name else "Unnamed"
 
 class Genre(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
     
     def __str__(self):
-        return self.name or 'unknown'
+        return str(self.name) if self.name else "Unnamed"
     
 class Book(models.Model):
     title = models.CharField(max_length=200)

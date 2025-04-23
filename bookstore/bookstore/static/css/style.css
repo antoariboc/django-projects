@@ -1,23 +1,32 @@
-html {
-    margin: 0px;
+html, body {
+    height: 100%;
+    margin: 0;
 }
-
 body {
-    background-color: rgb(235, 190, 124);
-    margin: 0px;
-    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-
-nav {
-
-    margin: 0px;
-    border: 0px;
+.content {
+    flex: 1 0 auto; /* This makes the content area expand to fill available space */
 }
-
-.container {
-    background-color: blanchedalmond;
-    margin: 0px;
-    border: 0px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+footer {
+    flex-shrink: 0; /* Prevents the footer from shrinking */
+}
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: rgba(255,255,255,0.9);
+}
+.social-icons a:hover {
+    color: white;
+}
+.footer-text {
+    color: rgba(255,255,255,0.8);
+}
+.footer-link {
+    color: rgba(255,255,255,0.8);
+}
+.footer-link:hover {
+    color: white;
 }

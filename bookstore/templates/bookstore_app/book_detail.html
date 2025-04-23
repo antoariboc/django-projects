@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
   <div class="col-md-4 col-lg-3 mb-2">
-    <h1>{{ template_data.author.name }}</h1>
+    <h1>{{ template_data.book.title }}</h1>
 
     <ul>
       <li>Description: {{ template_data.book.description }}</li>
       <li>Author: {{ template_data.book.author }}</li>
+      <li>Genres: 
+        {% for gen in template_data.book.genre.all %} 
+        {{ gen }}
+        {% endfor %}
+      </li>
+      <li>Editor: {{ template_data.book.author }}</li>
+      <li>Published date: {{ template_data.book.published_date }}</li>
     </ul>
 
     <a class="btn btn-primary" href="{% url 'bookstore_app.book_edit' id=template_data.book.id  %}">Edit</a>

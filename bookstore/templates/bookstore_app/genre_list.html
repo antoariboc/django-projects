@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
-{% block content %}  
+{% block content %}
+{% if user.is_authenticated %}  
 <a class="btn btn-primary" href="{% url 'bookstore_app.genre_add' %}">Add genre</a>
+{% endif %}
 {% for genre in template_data.genres %}
       <div class="col-md-4 col-lg-3 mb-2">
         <div class="p-2 card align-items-center pt-4">

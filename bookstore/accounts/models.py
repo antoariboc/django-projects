@@ -18,3 +18,6 @@ class CustomUser(AbstractBaseUser):
     email = models.CharField(max_length=30, default=None)
     username = models.CharField(max_length=30, default=None)
     
+    def __str__(self):
+        return self.username
+    

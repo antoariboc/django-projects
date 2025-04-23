@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import AuthorForm, GenreForm, BookForm
+from django.core.paginator import Paginator
 from .models import Author, Genre, Book
 
 # Create your views here.
@@ -28,19 +29,29 @@ def AddBookView(request):
 
 
 def BookListView(request):
-    books = Book.objects.all()
+    
+    search_term = request.GET.get('search')
+    if search_term:
+        books = Book.objects.filter(title__icontains=search_term)
+    else:
+        books = Book.objects.all()
+    
+    paginator = Paginator(books, 3)  # Show 3 items per page
+    
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
     template_data = {}
     template_data['title'] = 'Books'
     template_data['books'] = books
-    return render(request, 'bookstore_app/book_list.html', {'template_data': template_data})
+    return render(request, 'bookstore_app/book_list.html', {'page_obj':page_obj})
 
 
-def BookDetailView(request):
+def BookDetailView(request,id):
     book = Book.objects.get(id=id)
 
     template_data = {}
-    template_data['title'] = book.name
+    template_data['title'] = book.title
     template_data['book'] = book
     return render(request, 'bookstore_app/book_detail.html', {'template_data': template_data})
 
